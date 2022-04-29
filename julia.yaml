@@ -1,0 +1,33 @@
+start_directory: "~/Programming/Julia/${PNAME}"
+session_name: "${PNAME}"
+windows:
+  - window_name: workspace
+    start_directory: "~/Programming/Julia/${PNAME}/"
+    layout: even-horizontal
+    panes: 
+    - shell_command: 
+      - julia +release
+      - include("intro.jl")
+    - shell_command:
+      - cd src/
+
+  
+  - window_name: papers
+    start_directory: "~/Programming/Julia/${PNAME}/papers/"
+    panes: 
+    - shell_command: 
+      - cd papers/
+
+
+  - window_name: notebook
+    start-directory: "~/Programming/Julia/${PNAME}/"
+    panes: 
+    - shell_command: 
+      - julia +release
+
+  - window_name: bibliography
+    start_directory: "~/BooksAndResources/"
+    panes:
+    - shell_command: 
+      - clear
+  

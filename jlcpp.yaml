@@ -1,0 +1,49 @@
+session_name: "${PNAME}"
+start_directory: "~/Programming/Cpp/${PNAME}"
+windows:
+  - window_name: workspace
+    start_directory: "~/Programming/Cpp/${PNAME}/"
+    panes: 
+    - shell_command:
+      - 'cd src/'
+  
+  - window_name: cmake 
+    start_directory: "~/Programming/Cpp/${PNAME}/"
+    panes:
+    - shell_command: 
+      - 'cp ~/Programming/Cpp/cmake/ -r cmake/'
+      - 'cp ~/Programming/Cpp/CMakeLists.txt CMakeLists.txt'
+
+  - window_name: unittests
+    start_directory: "~/Programming/Cpp/${PNAME}/"
+    panes:
+    - shell_command: 
+      - 'mkdir -p unittests'
+      - 'cp ~/Programming/Cpp/testcmake.txt unittests/CMakeLists.txt'
+      - 'cd unittests'
+
+
+  - window_name: bench
+    start_directory: "~/Programming/Cpp/${PNAME}/"
+    panes:
+    - shell_command:
+      - 'mkdir -p bench/'
+      - 'cp ~/Programming/Cpp/benchcmake.txt bench/CMakeLists.txt'
+      - 'cd bench'
+
+  - window_name: build
+    start_directory: "~/Programming/Cpp/${PNAME}/"
+    panes:
+    - shell_command: 
+      - 'cp ~/Programming/Cpp/.clang-format .clang-format'
+      - 'cp ~/Programming/Cpp/.clang-tidy .clang-tidy'
+      - 'mkdir -p build/'
+      - 'cd build/'
+
+  - window_name: papers
+    start_directory: "~/Programming/Cpp/${PNAME}/"
+    panes: 
+    - shell_command: 
+      - 'mkdir -p papers/'
+      - 'cp ~/Programming/paper.tex ~/Programming/Cpp/${PNAME}/papers/'
+      - 'nvim paper.tex'

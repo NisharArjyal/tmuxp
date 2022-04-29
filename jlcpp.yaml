@@ -11,15 +11,16 @@ windows:
     start_directory: "~/Programming/Cpp/${PNAME}/"
     panes:
     - shell_command: 
-      - 'cp ~/Programming/Cpp/project_template/cmake/ -r cmake/'
-      - 'cp ~/Programming/Cpp/project_template/CMakeLists.txt CMakeLists.txt'
+      - 'cp -n ~/Programming/Cpp/project_template/cmake/ -r cmake/'
+      - 'cp -n ~/Programming/Cpp/project_template/CMakeLists.txt -r CMakeLists.txt'
+      - 'cd cmake/'
 
   - window_name: unittests
     start_directory: "~/Programming/Cpp/${PNAME}/"
     panes:
     - shell_command: 
       - 'mkdir -p unittests'
-      - 'cp ~/Programming/Cpp/project_template/testcmake.txt unittests/CMakeLists.txt'
+      - 'cp -n ~/Programming/Cpp/project_template/testcmake.txt -r unittests/CMakeLists.txt'
       - 'cd unittests'
 
 
@@ -28,15 +29,15 @@ windows:
     panes:
     - shell_command:
       - 'mkdir -p bench/'
-      - 'cp ~/Programming/Cpp/benchcmake.txt bench/CMakeLists.txt'
+      - 'cp -n ~/Programming/Cpp/project_template/benchcmake.txt -r bench/CMakeLists.txt'
       - 'cd bench'
 
   - window_name: build
     start_directory: "~/Programming/Cpp/${PNAME}/"
     panes:
     - shell_command: 
-      - 'cp ~/Programming/Cpp/project_template/.clang-format .clang-format'
-      - 'cp ~/Programming/Cpp/project_template/.clang-tidy .clang-tidy'
+      - 'cp -n -r ~/Programming/Cpp/project_template/.clang-format .clang-format'
+      - 'cp -n -r ~/Programming/Cpp/project_template/.clang-tidy .clang-tidy'
       - 'mkdir -p build/'
       - 'cd build/'
 
